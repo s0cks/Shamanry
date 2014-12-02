@@ -1,0 +1,70 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "sonatype"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+repositories {
+    maven {
+        name 'CB Maven FS'
+        url "http://chickenbones.net/maven/"
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'forge'
+
+dependencies{
+    compile "codechicken:CodeChickenLib:1.7.10-1.1.1.106:dev"
+    compile "codechicken:NotEnoughItems:1.7.10-1.0.3.67:dev"
+}
+
+version = "0.0.0.0"
+group= "thaumicflaminis" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "thaumicflaminis"
+
+minecraft {
+    version = "1.7.10-10.13.2.1230"
+    assetDir = "eclipse/assets"
+}
+
+sourceSets{
+    sourceSets.main.scala.srcDirs = [
+            "src/main/scala",
+    ]
+}
+
+processResources{
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+task deobfJar(type: Jar){
+    from(sourceSets.main.output){
+        appendix = "deobf"
+    }
+}
+
+artifacts{
+    archives deobfJar
+}
