@@ -7,11 +7,14 @@ import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 
 public class TFRecipes{
+    public static ShapelessArcaneRecipe shamanRodRecipe = null;
+
     public static void init(){
         // Arcane Crafting Recipes
-        ThaumcraftApi.addShapelessArcaneCraftingRecipe(
+        shamanRodRecipe = ThaumcraftApi.addShapelessArcaneCraftingRecipe(
                 "ROD_SHAMANIC",
                 new ItemStack(TFItems.itemShamanicWandCore()),
                 new AspectList()
@@ -22,7 +25,7 @@ public class TFRecipes{
         );
 
         // Regular Crafting Recipes
-        GameRegistry.addRecipe(
+        GameRegistry.addShapedRecipe(
                 new ItemStack(TFItems.itemStoneKnife(), 1),
                 "C",
                 "S",

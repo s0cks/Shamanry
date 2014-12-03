@@ -3,18 +3,10 @@ package tflaminis.common
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.item.{Item, ItemStack}
 import net.minecraft.util.ResourceLocation
-import thaumcraft.api.wands.WandRod
+import thaumcraft.api.wands.{StaffRod, WandRod}
 
 object TFItems{
   // Wands
-  val itemShamanicCapUncharged: Item = new Item()
-    .setUnlocalizedName("capShamanicUncharged")
-    .setCreativeTab(ThaumicFlaminis.TAB)
-    .setTextureName("tflaminis:capShamanicUncharged");
-  val itemShamanicCapCharged: Item = new Item()
-    .setUnlocalizedName("capShamanicCharged")
-    .setCreativeTab(ThaumicFlaminis.TAB)
-    .setTextureName("tflaminis:capShamanicCharged");
   val itemShamanicStaffCore: Item = new Item()
     .setUnlocalizedName("shamanicStaffCore")
     .setCreativeTab(ThaumicFlaminis.TAB)
@@ -41,13 +33,13 @@ object TFItems{
     .setTextureName("tflaminis:stone_knife");
 
   val WAND_SHAMANIC: WandRod = new WandRod("SHAMANIC", 100, new ItemStack(TFItems.itemShamanicWandCore), 15, null, new ResourceLocation("tflaminis", "textures/models/wandCoreShamanic.png"));
+  val STAFF_SHAMANIC: StaffRod = new StaffRod("SHAMANIC", 200, new ItemStack(TFItems.itemShamanicStaffCore), 15, null, new ResourceLocation("tflaminis", "textures/models/wandCoreShamanic.png"));
+
 
   def init(): Unit ={
     // Wands
     GameRegistry.registerItem(itemShamanicStaffCore, "itemShamanicStaffCore");
     GameRegistry.registerItem(itemShamanicWandCore, "itemShamanicWandCore");
-    GameRegistry.registerItem(itemShamanicCapCharged, "itemShamanicCapCharged");
-    GameRegistry.registerItem(itemShamanicCapUncharged, "itemShamanicCapUncharged");
 
     // Misc
     GameRegistry.registerItem(itemStoneKnife, "itemStoneKnife");
