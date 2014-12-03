@@ -5,6 +5,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.util.ForgeDirection;
 import tflaminis.api.IRitual;
 import tflaminis.api.Rituals;
@@ -54,10 +55,14 @@ implements IEssentiaTransport{
 
     public void activate(IRitual ritual, EntityPlayer player){
         if(!this.worldObj.isRemote){
-            this.ritual = ritual;
-            this.player = player;
-            this.active = true;
-            this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+            if(ritual.canPerform(this.worldObj, this.xCoord, this.yCoord, this.zCoord, player)){
+                this.ritual = ritual;
+                this.player = player;
+                this.active = true;
+                this.worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);
+            } else{
+                player.addChatComponentMessage(new ChatComponentText("You do not have the required karma level(s) to perform this ritual"));
+            }
         }
     }
 

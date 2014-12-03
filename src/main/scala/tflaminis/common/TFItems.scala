@@ -1,37 +1,51 @@
 package tflaminis.common
 
 import cpw.mods.fml.common.registry.GameRegistry
-import net.minecraft.item.Item
-import tflaminis.common.item.ItemRiteTablet
+import net.minecraft.item.{Item, ItemStack}
+import net.minecraft.util.ResourceLocation
+import thaumcraft.api.wands.WandRod
 
 object TFItems{
   // Wands
-  val itemShamanicCapUncharged = new Item()
+  val itemShamanicCapUncharged: Item = new Item()
     .setUnlocalizedName("capShamanicUncharged")
     .setCreativeTab(ThaumicFlaminis.TAB)
     .setTextureName("tflaminis:capShamanicUncharged");
-  val itemShamanicCapCharged = new Item()
+  val itemShamanicCapCharged: Item = new Item()
     .setUnlocalizedName("capShamanicCharged")
     .setCreativeTab(ThaumicFlaminis.TAB)
     .setTextureName("tflaminis:capShamanicCharged");
-  val itemShamanicStaffCore = new Item()
+  val itemShamanicStaffCore: Item = new Item()
     .setUnlocalizedName("shamanicStaffCore")
     .setCreativeTab(ThaumicFlaminis.TAB)
     .setTextureName("tflaminis:staffCoreShamanic");
+  val itemShamanicWandCore: Item = new Item()
+    .setUnlocalizedName("shamanicWandCore")
+    .setCreativeTab(ThaumicFlaminis.TAB)
+    .setTextureName("tflaminis:wandCoreShamanic");
+  val itemGoodTabletBlank: Item = new Item()
+    .setUnlocalizedName("stoneTabletBlank")
+    .setMaxStackSize(1)
+    .setCreativeTab(ThaumicFlaminis.TAB)
+    .setTextureName("tflaminis:good_tablet_raw");
+  val itemEvilTabletBlank: Item = new Item()
+    .setUnlocalizedName("evilTabletBlank")
+    .setMaxStackSize(1)
+    .setCreativeTab(ThaumicFlaminis.TAB)
+    .setTextureName("tflaminis:evil_tablet_raw");
 
   // Misc
-  val itemStoneKnife = new Item()
+  val itemStoneKnife: Item = new Item()
     .setUnlocalizedName("stone_knife")
     .setCreativeTab(ThaumicFlaminis.TAB)
     .setTextureName("tflaminis:stone_knife");
 
-  // Rite Tablets
-  val itemTabletKnowledge = new ItemRiteTablet(TFRituals.KNOWLEDGE);
-  val itemTabletTest = new ItemRiteTablet(TFRituals.TEST);
+  val WAND_SHAMANIC: WandRod = new WandRod("SHAMANIC", 100, new ItemStack(TFItems.itemShamanicWandCore), 15, null, new ResourceLocation("tflaminis", "textures/models/wandCoreShamanic.png"));
 
   def init(): Unit ={
     // Wands
     GameRegistry.registerItem(itemShamanicStaffCore, "itemShamanicStaffCore");
+    GameRegistry.registerItem(itemShamanicWandCore, "itemShamanicWandCore");
     GameRegistry.registerItem(itemShamanicCapCharged, "itemShamanicCapCharged");
     GameRegistry.registerItem(itemShamanicCapUncharged, "itemShamanicCapUncharged");
 
@@ -39,7 +53,7 @@ object TFItems{
     GameRegistry.registerItem(itemStoneKnife, "itemStoneKnife");
 
     // Rite Tablets
-    GameRegistry.registerItem(itemTabletKnowledge, "itemTabletKnowledge");
-    GameRegistry.registerItem(itemTabletTest, "itemTabletTest");
+    GameRegistry.registerItem(itemGoodTabletBlank, "itemGoodTabletBlank");
+    GameRegistry.registerItem(itemEvilTabletBlank, "itemEvilTabletBlank");
   }
 }

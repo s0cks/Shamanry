@@ -3,10 +3,8 @@ package tflaminis.common
 import net.minecraft.item.ItemStack
 import thaumcraft.api.ItemApi
 
-object TFRecipes{
+object ThaumcraftItems {
   val itemKnowledgeFrag: ItemStack = ItemApi.getItem("itemResource", 9);
 
-  def init(): Unit ={
-
-  }
+  val blockGreatwoodLog: ItemStack = ItemApi.getBlock("blockMagicalLog", 0);
 }

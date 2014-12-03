@@ -1,4 +1,4 @@
-package tflaminis.common.lib.rituals
+package tflaminis.common.lib.ritual.rituals
 
 import net.minecraft.entity.item.EntityItem
 import net.minecraft.entity.player.EntityPlayer
@@ -6,10 +6,10 @@ import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 import net.minecraftforge.common.util.ForgeDirection
-import tflaminis.api.IRitual
+import tflaminis.api.{IRitual, RitualType}
 import thaumcraft.api.aspects.Aspect
 
-class RitualTest
+object RitualTest
 extends IRitual{
   override def getAspect: Aspect ={
     return Aspect.MIND;
@@ -17,6 +17,10 @@ extends IRitual{
 
   override def getName: String ={
     return "riteTest";
+  }
+
+  override def getType(): RitualType={
+    return RitualType.EVIL;
   }
 
   override def hasRequiredKarma(player: EntityPlayer): Boolean={
@@ -27,5 +31,9 @@ extends IRitual{
     val dir: ForgeDirection = ForgeDirection.NORTH;
     val item: EntityItem = new EntityItem(world, x + dir.offsetX, y + dir.offsetY, z + dir.offsetZ, new ItemStack(Items.diamond));
     world.spawnEntityInWorld(item);
+  }
+
+  override def canPerform(world: World, x: Int, y: Int, z: Int, player: EntityPlayer): Boolean ={
+    return true;
   }
 }

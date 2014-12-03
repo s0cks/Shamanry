@@ -9,6 +9,7 @@ import net.minecraftforge.common.MinecraftForge
 import org.apache.logging.log4j.{LogManager, Logger}
 import tflaminis.common.command.{CommandKarma, CommandSetKarma}
 import tflaminis.common.event.EntityEventHandler
+import tflaminis.common.research.TFResearch
 import tflaminis.common.wand.ShamanicStaffOnUpdate
 import thaumcraft.api.wands.StaffRod
 
@@ -39,10 +40,15 @@ object ThaumicFlaminis{
     TFBlocks.init();
     TFTiles.init();
     TFRecipes.init();
+    TFResearch.init();
+    TFRituals.init();
   }
 
   @Mod.EventHandler
   def onPostInit(e: FMLPostInitializationEvent): Unit ={
+    // WandTriggerRegistry.registerWandBlockTrigger(StoneWandTriggerManager, 0, Blocks.stone, -1, "tflaminis");
+    // WandTriggerRegistry.registerWandBlockTrigger(NetherrackWandTriggerManager, 0, Blocks.netherrack, -1, "tflaminis");
+    TFRituals.generateTablets();
   }
 
   @Mod.EventHandler

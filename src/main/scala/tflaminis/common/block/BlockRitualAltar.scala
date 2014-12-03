@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.world.World
 import tflaminis.common.ThaumicFlaminis
-import tflaminis.common.lib.rituals.RitualKnowledge
+import tflaminis.common.lib.ritual.rituals.RitualKnowledge
 import tflaminis.common.tile.TileRitualAltar
 
 object BlockRitualAltar
@@ -16,7 +16,7 @@ extends BlockContainer(Material.rock){
 
   override def onBlockActivated(world: World, x: Int, y: Int, z: Int, player: EntityPlayer, i: Int, f: Float, j: Float, k: Float): Boolean = {
     val tile: TileRitualAltar = world.getTileEntity(x, y, z).asInstanceOf[TileRitualAltar];
-    tile.activate(new RitualKnowledge(), player);
+    tile.activate(RitualKnowledge, player);
     return true;
   }
 

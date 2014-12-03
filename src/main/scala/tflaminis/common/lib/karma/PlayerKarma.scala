@@ -1,8 +1,10 @@
 package tflaminis.common.lib.karma
 
 import net.minecraft.nbt.NBTTagCompound
+import tflaminis.common.lib.ISaveable
 
-class PlayerKarma{
+class PlayerKarma
+extends ISaveable{
   private var good: Float = 0.0F;
   private var bad: Float = 0.0F;
 
@@ -50,12 +52,12 @@ class PlayerKarma{
     return this.good > this.bad;
   }
 
-  def load(comp: NBTTagCompound): Unit ={
+  override def load(comp: NBTTagCompound): Unit ={
     this.good = comp.getFloat("karma_good");
     this.bad = comp.getFloat("karma_bad");
   }
 
-  def save(comp: NBTTagCompound): Unit ={
+  override def save(comp: NBTTagCompound): Unit ={
     comp.setFloat("karma_good", this.good);
     comp.setFloat("karma_bad", this.bad);
   }
