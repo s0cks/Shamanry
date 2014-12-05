@@ -1,0 +1,19 @@
+[
+    {
+        "modid":"shamanry",
+        "name":"Shamanry",
+        "description":"Adding Shamanry to Thaumcraft",
+        "version":"${version}",
+        "mcversion":"${mcversion}",
+        "url":"https://github.com/s0cks/shamanry",
+        "updateUrl":"",
+        "authorList":[
+            "Asyncronos"
+        ],
+        "credits":"Asyncronos, TennePG",
+        "logoFile":"banner.png",
+        "screenshots":[
+
+        ]
+    }
+]

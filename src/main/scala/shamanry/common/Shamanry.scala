@@ -1,0 +1,55 @@
+package shamanry.common
+
+import cpw.mods.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent, FMLServerStartingEvent}
+import cpw.mods.fml.common.{Mod, SidedProxy}
+import net.minecraft.creativetab.CreativeTabs
+import net.minecraft.item.Item
+import net.minecraftforge.common.MinecraftForge
+import org.apache.logging.log4j.{LogManager, Logger}
+import shamanry.common.command.{CommandKarma, CommandSetKarma}
+import shamanry.common.event.EntityEventHandler
+import shamanry.common.research.ShamanryResearch
+
+@Mod(modid = "shamanry", name = "Shamanry", version = "0.0.1.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
+object Shamanry{
+  @SidedProxy(
+    clientSide = "shamanry.client.ClientProxy",
+    serverSide = "shamanry.common.CommonProxy"
+  )
+  var proxy: CommonProxy = null;
+
+  val LOGGER: Logger = LogManager.getLogger(Shamanry.getClass().getSimpleName());
+  val TAB: CreativeTabs = new CreativeTabs("shamanry"){
+    override def getTabIconItem: Item ={
+      return ShamanryItems.itemStoneKnife;
+    }
+  };
+
+  @Mod.EventHandler
+  def onPreInit(e: FMLPreInitializationEvent): Unit ={
+    MinecraftForge.EVENT_BUS.register(EntityEventHandler);
+
+    proxy.registerRenders();
+  }
+
+  @Mod.EventHandler
+  def onInit(e: FMLInitializationEvent): Unit ={
+    ShamanryItems.init();
+    ShamanryBlocks.init();
+    ShamanryTiles.init();
+  }
+
+  @Mod.EventHandler
+  def onPostInit(e: FMLPostInitializationEvent): Unit ={
+    ShamanryRituals.init();
+    ShamanryRituals.generateTablets();
+    ShamanryRecipes.init();
+    ShamanryResearch.init();
+  }
+
+  @Mod.EventHandler
+  def onServerStart(e: FMLServerStartingEvent): Unit ={
+    e.registerServerCommand(new CommandKarma());
+    e.registerServerCommand(new CommandSetKarma());
+  }
+}

@@ -1,70 +1,73 @@
-buildscript {
-    repositories {
+apply plugin: 'scala'
+apply plugin: 'forge'
+apply from: "gradle/scripts/properties.gradle"
+apply from: "gradle/scripts/dependencies.gradle"
+apply from: "gradle/scripts/artifacts.gradle"
+
+buildscript{
+    repositories{
         mavenCentral()
-        maven {
-            name = "forge"
+        maven{
+            name = "Forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        maven {
+
+        maven{
             name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = "https://oss.sonatype.org/content/repositories/snapshots"
         }
     }
-    dependencies {
+
+    dependencies{
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
 
-repositories {
-    maven {
-        name 'CB Maven FS'
-        url "http://chickenbones.net/maven/"
-    }
+sourceCompatability = JavaVersion.VERSION_1_7
+targetCompatability = JavaVersion.VERSION_1_7
+
+version = config.version
+group = config.group
+archivesBaseName = config.archivesBaseName
+
+jar{
+    include "shamanry/**"
+    include "assets/**"
+    include "mcmod.info"
+    include "banner.png"
 }
 
-apply plugin: 'scala'
-apply plugin: 'forge'
-
-dependencies{
-    compile "codechicken:CodeChickenLib:1.7.10-1.1.1.106:dev"
-    compile "codechicken:NotEnoughItems:1.7.10-1.0.3.67:dev"
-}
-
-version = "0.0.0.0"
-group= "thaumicflaminis" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "thaumicflaminis"
-
-minecraft {
-    version = "1.7.10-10.13.2.1230"
-    assetDir = "eclipse/assets"
+minecraft{
+    version = config.minecraft_version + "-" + config.forge_version
+    replace "@version@", project.version
+    runDir = "run"
 }
 
 sourceSets{
-    sourceSets.main.scala.srcDirs = [
-            "src/main/scala",
-    ]
+    main{
+        java{
+            srcDirs += "src/main/java"
+        }
+
+        scala{
+            srcDirs = ['src/main/scala']
+        }
+
+        resources{
+            srcDir "src/main/resources/"
+            include "lore.json"
+            include "assets/shamanry/lang/*.lang",
+                    "assets/shamanry/textures/block/*",
+                    "assets/shamanry/textures/guis/*",
+                    "assets/shamanry/textures/models/*",
+                    "assets/shamanry/textures/items/*"
+        }
+    }
 }
 
 processResources{
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+    from(sourceSets.main.resources.srcDirs){
+        include "mcmod.info"
+        expand "version": project.version, "mcversion":config.minecraft_version
     }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
-
-task deobfJar(type: Jar){
-    from(sourceSets.main.output){
-        appendix = "deobf"
-    }
-}
-
-artifacts{
-    archives deobfJar
 }

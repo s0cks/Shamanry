@@ -1,0 +1,38 @@
+item.shamanicStaffCore.name=Shaman Staff Core
+item.shamanicWandCore.name=Shaman Wand Core
+item.stone_knife.name=Stone Knife
+item.rite_tablet_riteKnowledge.name=Ritual Stone of Knowledge
+item.rite_tablet_riteTest.name=Ritual Stone of Testing
+item.rite_tablet_riteDivine.name=Ritual of the Divines
+item.rite_tablet_riteHell.name=Ritual of Hell
+item.rite_tablet_riteRebirth.name=Ritual of Rebirth
+item.rite_tablet_riteDarkness.name=Ritual of Darkness
+item.stoneTabletBlank.name=Blank Tablet (Good)
+item.evilTabletBlank.name=Blank Tablet (Evil)
+item.itemCharmOfBlessings.name=Charm of Blessings
+item.itemCharmOfSacrifice.name=Charm of Sacrifice
+tc.research_category.ThaumicFlaminis=Shamanry
+
+item.Wand.SHAMANIC.rod=Shaman
+item.Staff.SHAMANIC.rod=Shaman
+
+tile.ritual_altar.name=Ritual Altar
+
+# Thaumcraft Research Localization
+tf.name.ROD_SHAMANIC=Shaman Rod
+tf.tag.ROD_SHAMANIC=
+
+tf.name.STAFF_SHAMANIC=Shaman Staff
+tf.tag.STAFF_SHAMANIC=
+
+tf.name.TABLET_GOOD=Ritual Tablet (Good)
+tf.tag.TABLET_GOOD=It's all good
+
+tf.name.TABLET_EVIL=Ritual Tablet (Evil)
+tf.tag.TABLET_EVIL=Bad Meets Evil
+
+tf.name.RITUAL_ALTAR=Ritual Altar
+tf.tag.RITUAL_ALTAR=Let the spirits fly
+
+tf.name.RITE_KNOWLEDGE=Ritual of Knowledge
+tf.tag.RITE_KNOWLEDGE=The ancient knowledge

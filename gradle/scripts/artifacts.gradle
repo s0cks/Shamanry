@@ -1,0 +1,21 @@
+task devJar(type: Jar){
+    from(sourceSets.main.output){
+        include "shamanry/**"
+        include "assets/**"
+        include "mcmod.info"
+    }
+
+    classifier = "dev"
+}
+
+task apiJar(type: Jar){
+    from(sourceSets.api.scala){
+        include "shamanry/api/**"
+    }
+
+    classifier = "api"
+}
+
+artifacts{
+    archives devJar
+}
