@@ -34,6 +34,7 @@ jar{
     include "shamanry/**"
     include "assets/**"
     include "mcmod.info"
+    include "lore.json"
     include "banner.png"
 }
 

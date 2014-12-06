@@ -1,4 +1,4 @@
-package shamanry.common.lib.ritual.rituals
+package shamanry.common.lib.rituals
 
 import java.util.Random
 
@@ -39,7 +39,6 @@ extends IRitual{
       world.playSoundEffect(x, y, z, "ambient.weather.thunder", 10000.0F, 0.8F + this.rand.nextFloat * 0.2F)
       world.playSoundEffect(x, y, z, "random.explode", 2.0F, 0.5F + this.rand.nextFloat * 0.2F)
       world.spawnEntityInWorld(item);
-      Karma.get(player).subGoodKarma(0.1);
     } else{
       if(!world.isRemote){
         player.addChatComponentMessage(new ChatComponentText("You must have good karma to perform this ritual"));

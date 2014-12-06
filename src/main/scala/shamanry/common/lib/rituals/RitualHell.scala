@@ -1,4 +1,4 @@
-package shamanry.common.lib.ritual.rituals
+package shamanry.common.lib.rituals
 
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.world.World
@@ -21,7 +21,7 @@ extends IRitual{
   }
 
   override def perform(world: World, x: Int, y: Int, z: Int, player: EntityPlayer): Unit ={
-    Karma.get(player).addBadKarma(0.1F);
+    Karma.get(player).addBadKarma(0.1);
   }
 
   override def hasRequiredKarma(player: EntityPlayer): Boolean ={

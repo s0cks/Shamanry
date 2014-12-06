@@ -20,6 +20,7 @@ implements IEssentiaTransport{
     private int currentEssentia;
     private boolean active = false;
     private EntityPlayer player;
+    private float rot = 0.0F;
 
     private static final int ESSENTIA_CAPACITY = 16;
 
@@ -72,14 +73,28 @@ implements IEssentiaTransport{
         return this.ritual;
     }
 
+    public float getRotation(){
+        return this.rot;
+    }
+
     @Override
     public void updateEntity(){
+        if(this.ritual != null){
+            this.rot += 2.0F;
+
+            if(this.rot > 360.0F){
+                this.rot = 0.0F;
+            }
+        } else{
+            this.rot = 0.0F;
+        }
+
         if(this.currentEssentia < ESSENTIA_CAPACITY){
             this.fill();
         }
 
         if(this.active && this.currentEssentia == ESSENTIA_CAPACITY){
-            if(this.player != null){
+            if(this.player != null && this.ritual != null){
                 this.ritual.perform(this.worldObj, this.xCoord, this.yCoord, this.zCoord, this.player);
                 this.currentEssentia = 0;
                 this.active = false;

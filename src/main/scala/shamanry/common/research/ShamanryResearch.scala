@@ -58,8 +58,14 @@ object ShamanryResearch{
       .setSecondary()
       .registerResearchItem();
 
-    research = new ShamanryResearchItem("RITE_DARKNESS", RESEARCH_TAB, new AspectList().add(Aspect.DARKNESS, 20), 10, -5, 2, Rituals.getTablet("riteDarkness"))
+    research = new ShamanryResearchItem("RITE_DARKNESS", RESEARCH_TAB, new AspectList().add(Aspect.DARKNESS, 20), 10, -3, 2, Rituals.getTablet("riteDarkness"))
       .setPages(new ResearchPage(LoreCollector.getLore("rite_darknes")), new ResearchPage(ShamanryRecipes.darknessRiteRecipe))
+      .setParents("TABLET_EVIL")
+      .setSecondary()
+      .registerResearchItem();
+
+    research = new ShamanryResearchItem("RITE_STORM", RESEARCH_TAB, new AspectList().add(Aspect.MAGIC, 15).add(Aspect.WEATHER, 15), 11, -3, 2, Rituals.getTablet("riteStorm"))
+      .setPages(new ResearchPage(LoreCollector.getLore("rite_storm")), new ResearchPage(ShamanryRecipes.stormRiteRecipe))
       .setParents("TABLET_EVIL")
       .setSecondary()
       .registerResearchItem();

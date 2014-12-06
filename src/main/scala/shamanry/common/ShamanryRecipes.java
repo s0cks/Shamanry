@@ -17,12 +17,15 @@ public class ShamanryRecipes{
     public static ShapelessArcaneRecipe shamanRodRecipe = null;
     public static ShapelessArcaneRecipe goodTabletRecipe = null;
     public static ShapelessArcaneRecipe evilTabletRecipe = null;
+
     public static ShapedArcaneRecipe ritualAltarRecipe = null;
+
     public static InfusionRecipe shamanStaffCoreRecipe = null;
     public static InfusionRecipe knowledgeRiteRecipe = null;
     public static InfusionRecipe divineRiteRecipe = null;
     public static InfusionRecipe hellRiteRecipe = null;
     public static InfusionRecipe darknessRiteRecipe = null;
+    public static InfusionRecipe stormRiteRecipe = null;
 
     public static void init(){
         // Arcane Crafting Recipes
@@ -156,6 +159,21 @@ public class ShamanryRecipes{
                         ThaumcraftItems.itemBalancedShard(),
                         ThaumcraftItems.itemBalancedShard(),
                         new ItemStack(Items.nether_star)
+                }
+        );
+        stormRiteRecipe = ThaumcraftApi.addInfusionCraftingRecipe("RITE_STORM",
+                Rituals.getTablet("riteStorm"), 1,
+                new AspectList()
+                    .add(Aspect.MAGIC, 25)
+                    .add(Aspect.WEATHER, 25)
+                    .add(Aspect.DARKNESS, 25),
+                new ItemStack(ShamanryItems.itemEvilTabletBlank()),
+                new ItemStack[]{
+                        ThaumcraftItems.itemBalancedShard(),
+                        ThaumcraftItems.itemBalancedShard(),
+                        ThaumcraftItems.itemBalancedShard(),
+                        new ItemStack(Items.nether_star),
+                        new ItemStack(Items.diamond)
                 }
         );
     }

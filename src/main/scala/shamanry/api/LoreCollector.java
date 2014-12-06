@@ -15,15 +15,22 @@ public final class LoreCollector{
 
     static
     {
-        InputStream stream = System.class.getResourceAsStream("/assets/shamanry/lore.json");
+        InputStream stream = null;
         try{
+            stream = LoreCollector.class.getResourceAsStream("/lore.json");
+            if(stream == null){
+                throw new NullPointerException("Stream == null");
+            }
+
             Map<String, String> map1 = GSON.fromJson(new InputStreamReader(stream), new TypeToken<Map<String, String>>(){}.getType());
             map.putAll(map1);
         } catch(Exception e){
-            // Fallthrough
+            e.printStackTrace(System.err);
         } finally{
             try{
-                stream.close();
+                if(stream != null){
+                    stream.close();
+                }
             } catch(IOException e){
                 e.printStackTrace(System.err);
             }

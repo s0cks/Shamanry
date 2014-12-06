@@ -10,7 +10,7 @@ import shamanry.common.command.{CommandKarma, CommandSetKarma}
 import shamanry.common.event.EntityEventHandler
 import shamanry.common.research.ShamanryResearch
 
-@Mod(modid = "shamanry", name = "Shamanry", version = "0.0.1.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
+@Mod(modid = "shamanry", name = "Shamanry", version = "0.0.2.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
 object Shamanry{
   @SidedProxy(
     clientSide = "shamanry.client.ClientProxy",
@@ -37,11 +37,11 @@ object Shamanry{
     ShamanryItems.init();
     ShamanryBlocks.init();
     ShamanryTiles.init();
+    ShamanryRituals.init();
   }
 
   @Mod.EventHandler
   def onPostInit(e: FMLPostInitializationEvent): Unit ={
-    ShamanryRituals.init();
     ShamanryRituals.generateTablets();
     ShamanryRecipes.init();
     ShamanryResearch.init();

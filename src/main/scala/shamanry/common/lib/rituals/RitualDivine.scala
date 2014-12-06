@@ -1,4 +1,4 @@
-package shamanry.common.lib.ritual.rituals
+package shamanry.common.lib.rituals
 
 import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.world.World

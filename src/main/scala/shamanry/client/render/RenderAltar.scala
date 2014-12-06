@@ -8,8 +8,10 @@ import net.minecraft.tileentity.TileEntity
 import net.minecraft.util.ResourceLocation
 import net.minecraft.world.IBlockAccess
 import org.lwjgl.opengl.GL11
+import shamanry.api.Rituals
 import shamanry.client.model.ModelAltar
 import shamanry.common.tile.TileRitualAltar
+import shamanry.common.util.RenderHelper
 
 class RenderAltar(val id: Int)
 extends TileEntitySpecialRenderer
@@ -32,7 +34,10 @@ with ISimpleBlockRenderingHandler{
     this.model.renderAltar();
 
     if(tile.getRitual != null){
-      this.model.renderTablet();
+      GL11.glTranslated(0.35F, -0.9F, 0.35F);
+      GL11.glScalef(0.5F, 0.5F, 0.5F);
+      GL11.glRotatef(tile.getRotation, 0.0F, 1.0F, 0.0F);
+      RenderHelper.renderItem3D(Rituals.getTablet(tile.getRitual.getName));
     }
 
     GL11.glPopMatrix();
@@ -47,7 +52,13 @@ with ISimpleBlockRenderingHandler{
   }
 
   override def renderInventoryBlock(block: Block, metadata: Int, modelId: Int, renderer: RenderBlocks): Unit ={
-
+    this.bindTexture(this.texture);
+    GL11.glPushMatrix();
+    GL11.glScalef(1.25F, 1.25F, 1.25F);
+    GL11.glTranslatef(0.0F, 0.0F, 0.75F);
+    GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
+    this.model.renderAltar();
+    GL11.glPopMatrix();
   }
 
   override def renderWorldBlock(world: IBlockAccess, x: Int, y: Int, z: Int, block: Block, modelId: Int, renderer: RenderBlocks): Boolean ={

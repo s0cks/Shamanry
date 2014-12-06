@@ -14,8 +14,16 @@ import shamanry.common.tile.TileRitualAltar
 
 object BlockRitualAltar
 extends BlockContainer(Material.rock){
+  private var renderID: Int = -1;
+
   this.setCreativeTab(Shamanry.TAB);
   this.setBlockName("ritual_altar");
+  this.setHardness(2.0F);
+  this.setResistance(10.0F);
+
+  def setRenderType(i: Int): Unit ={
+    this.renderID = i;
+  }
 
   override def onBlockActivated(world: World, x: Int, y: Int, z: Int, player: EntityPlayer, i: Int, f: Float, j: Float, k: Float): Boolean = {
     val tile: TileRitualAltar = world.getTileEntity(x, y, z).asInstanceOf[TileRitualAltar];
@@ -56,6 +64,6 @@ extends BlockContainer(Material.rock){
   }
 
   override def getRenderType(): Int={
-    return -1;
+    return this.renderID;
   }
 }

@@ -4,7 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.item.ItemStack
 import shamanry.api.{IRitual, Rituals}
 import shamanry.common.item.ItemRiteTablet
-import shamanry.common.lib.ritual.rituals._
+import shamanry.common.lib.rituals._
 
 import scala.collection.JavaConversions._
 
@@ -15,6 +15,7 @@ object ShamanryRituals{
     Rituals.registerRitual(RitualHell);
     // Rituals.registerRitual(RitualConjureVillager);
     Rituals.registerRitual(RitualNightfall);
+    Rituals.registerRitual(RitualStorm);
   }
 
   def generateTablets(): Unit ={

@@ -1,12 +1,13 @@
 item.shamanicStaffCore.name=Shaman Staff Core
 item.shamanicWandCore.name=Shaman Wand Core
 item.stone_knife.name=Stone Knife
-item.rite_tablet_riteKnowledge.name=Ritual Stone of Knowledge
-item.rite_tablet_riteTest.name=Ritual Stone of Testing
-item.rite_tablet_riteDivine.name=Ritual of the Divines
+item.rite_tablet_riteKnowledge.name=Ritual of Knowledge
+item.rite_tablet_riteTest.name=Ritual of Testing
+item.rite_tablet_riteDivine.name=Ritual of The Divines
 item.rite_tablet_riteHell.name=Ritual of Hell
 item.rite_tablet_riteRebirth.name=Ritual of Rebirth
 item.rite_tablet_riteDarkness.name=Ritual of Darkness
+item.rite_tablet_riteStorm.name=Ritual of The Storm
 item.stoneTabletBlank.name=Blank Tablet (Good)
 item.evilTabletBlank.name=Blank Tablet (Evil)
 item.itemCharmOfBlessings.name=Charm of Blessings
@@ -36,3 +37,15 @@ tf.tag.RITUAL_ALTAR=Let the spirits fly
 
 tf.name.RITE_KNOWLEDGE=Ritual of Knowledge
 tf.tag.RITE_KNOWLEDGE=The ancient knowledge
+
+tf.name.RITE_DIVINES=Ritual of The Divines
+tf.tag.RITE_DIVINES=Oh holy spirit
+
+tf.name.RITE_HELL=Ritual of Hell
+tf.tag.RITE_HELL=Am I doing this rite?
+
+tf.name.RITE_DARKNESS=Ritual of Darkness
+tf.tag.RITE_DARKNESS=Let there (not) be light
+
+tf.name.RITE_STORM=Ritual of The Storm
+tf.tag.RITE_STORM=Do the rain dance
