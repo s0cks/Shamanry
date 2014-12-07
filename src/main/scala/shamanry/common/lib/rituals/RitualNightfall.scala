@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.util.ChatComponentText
 import net.minecraft.world.World
 import shamanry.api.{IRitual, RitualType}
+import shamanry.common.util.SoundHelper;
 import shamanry.common.lib.karma.Karma
 import thaumcraft.api.aspects.Aspect
 
@@ -27,8 +28,7 @@ extends IRitual{
 
   override def perform(world: World, x: Int, y: Int, z: Int, player: EntityPlayer): Unit ={
     if(Karma.get(player).isEvil()){
-      world.playSoundEffect(x, y, z, "ambient.weather.thunder", 10000.0F, 0.8F + this.rand.nextFloat * 0.2F);
-      world.playSoundEffect(x, y, z, "random.explode", 2.0F, 0.5F + this.rand.nextFloat * 0.2F);
+      SoundHelper.playThunderEffect(world, x, y, z);
 
       if(!world.isRemote){
         world.setWorldTime(18000);

@@ -13,7 +13,7 @@ object ShamanryRituals{
     Rituals.registerRitual(RitualKnowledge);
     Rituals.registerRitual(RitualDivine);
     Rituals.registerRitual(RitualHell);
-    // Rituals.registerRitual(RitualConjureVillager);
+    Rituals.registerRitual(RitualConjureVillager);
     Rituals.registerRitual(RitualNightfall);
     Rituals.registerRitual(RitualStorm);
   }

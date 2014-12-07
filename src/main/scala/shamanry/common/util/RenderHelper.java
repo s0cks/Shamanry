@@ -82,5 +82,4 @@ public class RenderHelper{
         float b = (color & 255) / 255.0F;
         GL11.glColor4f(r, g, b, 1.0F);
     }
-
 }

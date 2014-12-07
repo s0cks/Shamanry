@@ -8,6 +8,7 @@ import net.minecraftforge.common.MinecraftForge
 import org.apache.logging.log4j.{LogManager, Logger}
 import shamanry.common.command.{CommandKarma, CommandSetKarma}
 import shamanry.common.event.EntityEventHandler
+import shamanry.common.network.PacketHandler
 import shamanry.common.research.ShamanryResearch
 
 @Mod(modid = "shamanry", name = "Shamanry", version = "0.0.2.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
@@ -45,6 +46,7 @@ object Shamanry{
     ShamanryRituals.generateTablets();
     ShamanryRecipes.init();
     ShamanryResearch.init();
+    PacketHandler.init();
   }
 
   @Mod.EventHandler

@@ -35,9 +35,9 @@ extends BlockContainer(Material.rock){
       }
     } else{
       if(player.isSneaking() && tile.getRitual != null){
-        val stack: ItemStack = Rituals.getTablet(tile.getRitual.getName);
-        val item: EntityItem = new EntityItem(world, x, y, z, stack);
         if(!world.isRemote){
+          val stack: ItemStack = Rituals.getTablet(tile.getRitual.getName);
+          val item: EntityItem = new EntityItem(world, x, y, z, stack);
           world.spawnEntityInWorld(item);
         }
         tile.setRitual(null);
