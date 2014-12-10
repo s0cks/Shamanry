@@ -8,4 +8,5 @@ object ThaumcraftItems {
   val itemBalancedShard: ItemStack = ItemApi.getItem("itemShard", 6);
 
   val blockGreatwoodLog: ItemStack = ItemApi.getBlock("blockMagicalLog", 0);
+  val blockArcaneStone = ItemApi.getBlock("blockCosmeticSolid", 6);
 }

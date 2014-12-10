@@ -1,6 +1,6 @@
 package shamanry.common
 
-import cpw.mods.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent, FMLServerStartingEvent}
+import cpw.mods.fml.common.event._
 import cpw.mods.fml.common.{Mod, SidedProxy}
 import net.minecraft.creativetab.CreativeTabs
 import net.minecraft.item.Item
@@ -11,7 +11,7 @@ import shamanry.common.event.EntityEventHandler
 import shamanry.common.network.PacketHandler
 import shamanry.common.research.ShamanryResearch
 
-@Mod(modid = "shamanry", name = "Shamanry", version = "0.0.2.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
+@Mod(modid = "shamanry", name = "Shamanry", version = "0.0.3.0", modLanguage = "scala", dependencies = "required-after:Thaumcraft", useMetadata = true)
 object Shamanry{
   @SidedProxy(
     clientSide = "shamanry.client.ClientProxy",
@@ -39,6 +39,8 @@ object Shamanry{
     ShamanryBlocks.init();
     ShamanryTiles.init();
     ShamanryRituals.init();
+
+    FMLInterModComms.sendMessage("Waila", "register", "shamanry.client.waila.WailaHandler.create");
   }
 
   @Mod.EventHandler

@@ -21,6 +21,7 @@ implements IEssentiaTransport{
     private boolean active = false;
     private EntityPlayer player;
     private float rot = 0.0F;
+    private float rotation = 90.0F;
 
     private static final int ESSENTIA_CAPACITY = 16;
 
@@ -30,6 +31,7 @@ implements IEssentiaTransport{
         this.ritual = Rituals.getRitualByName(comp.getString("ritual"));
         this.currentEssentia = comp.getInteger("currentEssentia");
         this.active = comp.getBoolean("active");
+        this.rotation = comp.getFloat("rotation");
     }
 
     @Override
@@ -38,6 +40,7 @@ implements IEssentiaTransport{
         comp.setInteger("currentEssentia", this.currentEssentia);
         comp.setString("ritual", this.ritual != null ? this.ritual.getName() : "default");
         comp.setBoolean("active", this.active);
+        comp.setFloat("rotation", this.rotation);
     }
 
     @Override
@@ -57,6 +60,10 @@ implements IEssentiaTransport{
         this.ritual = ritual;
     }
 
+    public void clearEssentia(){
+        this.currentEssentia = 0;
+    }
+
     public void activate(EntityPlayer player){
         if(!this.worldObj.isRemote){
             if(ritual.canPerform(this.worldObj, this.xCoord, this.yCoord, this.zCoord, player)){
@@ -73,8 +80,16 @@ implements IEssentiaTransport{
         return this.ritual;
     }
 
-    public float getRotation(){
+    public float getRot(){
         return this.rot;
+    }
+
+    public float getRotation(){
+        return this.rotation;
+    }
+
+    public void setRotation(float rotation){
+        this.rotation = rotation;
     }
 
     @Override

@@ -16,18 +16,13 @@ import shamanry.common.util.RenderHelper
 class RenderAltar(val id: Int)
 extends TileEntitySpecialRenderer
 with ISimpleBlockRenderingHandler{
-  private val texture: ResourceLocation = new ResourceLocation("shamanry", "textures/models/altar_good.png");
+  private val texture: ResourceLocation = new ResourceLocation("shamanry", "textures/models/ritualAltar.png");
   private val model: ModelAltar = new ModelAltar();
 
   override def renderTileEntityAt(tiles : TileEntity, x : Double, y : Double, z: Double, p_147500_8_ : Float): Unit ={
     val tile: TileRitualAltar = tiles.asInstanceOf[TileRitualAltar];
 
-    if(tile.getRitual != null){
-      this.bindTexture(tile.getRitual.getType.getModelTexture);
-    } else{
-      this.bindTexture(this.texture);
-    }
-
+    this.bindTexture(this.texture);
     GL11.glPushMatrix();
     GL11.glTranslated(x + 0.15F, y + 0.1F, z + 0.85F);
     GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
@@ -36,7 +31,7 @@ with ISimpleBlockRenderingHandler{
     if(tile.getRitual != null){
       GL11.glTranslated(0.35F, -0.9F, 0.35F);
       GL11.glScalef(0.5F, 0.5F, 0.5F);
-      GL11.glRotatef(tile.getRotation, 0.0F, 1.0F, 0.0F);
+      GL11.glRotatef(tile.getRot, 0.0F, 1.0F, 0.0F);
       RenderHelper.renderItem3D(Rituals.getTablet(tile.getRitual.getName));
     }
 

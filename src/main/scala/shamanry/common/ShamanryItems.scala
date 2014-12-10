@@ -3,7 +3,7 @@ package shamanry.common
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.item.{Item, ItemStack}
 import net.minecraft.util.ResourceLocation
-import shamanry.common.item.{ItemCharmOfSacrifice, ItemCharmOfBlessing}
+import shamanry.common.item.{ItemCharmOfHeavens, ItemCharmOfStalker, ItemCharmOfSacrifice, ItemCharmOfBlessing}
 import thaumcraft.api.wands.{StaffRod, WandRod}
 
 object ShamanryItems{
@@ -52,5 +52,7 @@ object ShamanryItems{
     // Baubles
     GameRegistry.registerItem(ItemCharmOfBlessing, "itemCharmOfBlessing");
     GameRegistry.registerItem(ItemCharmOfSacrifice, "itemCharmOfSacrifice");
+    GameRegistry.registerItem(ItemCharmOfStalker, "itemCharmOfStalker");
+    GameRegistry.registerItem(ItemCharmOfHeavens, "itemCharmOfHeavens");
   }
 }

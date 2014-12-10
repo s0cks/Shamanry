@@ -12,7 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-public class RenderHelper{
+public final class RenderHelper{
     public static final ResourceLocation texEnchant = new ResourceLocation("textures/misc/enchanted_item_glint.png");
 
     public static void renderItem3D(ItemStack stack){

@@ -1,6 +1,14 @@
 {
-    "tablet_good":"",
-    "tablet_evil":"",
-    "ritual_altar":"",
-    "rite_knowledge":""
+    "tablet_stone":"",
+    "tablet_nether":"Deeper research into the ",
+    "ritual_altar":"Following up on your discovery of the strange vis activity around the carved greatwood wands and staves, you realized the need for a structure that could withstand the pressure of highly concentrated magic without leading to massive flux spills. Using the latent power of a wither skull and a balanced shard, you've managed to create an altar that is able to withstand and contain vis fields",
+    "ritual_altar_2":" The Ritual Altar should allow you to charge and activate Ritual Tablets using vis without too much danger. That is, it shouldn't explode in the presence the hypercompressed magic of the already magically infused tablets being bombarded with streams of vis. The divines will definitely take note of the buildup of magic. What happens as a result of the ritual, however, is entirely up to the divines.",
+    "rite_knowledge":"You've managed to interpret some more of the writing shown to you by the stone tablets. The writings speak of a promise of great knowledge for those who have proven themselves to be virtuous and worthy. You were sure there was some way to communicate to these divines what knowledge you seek",
+    "rite_knowledge_2":"Using what you know about the stone tablets, you've managed to create a medium that communicates this desire. By infusing a stone tablet with raw intelligence and the correct symbols, the magical energy in the tablet should take the required form. Though, it likely won't be strong enough to on its own. You'll have to find a way to activate it. \n You feel something urge you to attempt this ritual as soon as you have done something to merit this divine gift. Now to figure out what...",
+    "rite_divines":"Your studies into the history regarding the divines has been fruitful. Quite often the divines are compared to the sky, both day and night. Very often, they seem to be associated with the stars. With some help from the historical accounts, you've invented a ritual that may win their favor. By infusing the magical power of a nether star and the essence of light into a stone tablet, you've created what you believe to be the optimal message to express your appreciation of their guidance.",
+    "rite_hell":"",
+    "rite_darkness":"",
+    "rite_storm":"",
+    "shamanwand":"With some experimenting, greatwood has proven capable of holding a significantly more vis by carving aspect runes into the raw wood. These wand cores are capable of storing as much as silverwood, up to 100 vis of each type. Although, it feels a little strange in your hands.",
+    "shamanstaff":"Staff cores crafted from rune-carved greatwood can store up to 250 vis of each type. \n You've also discovered the source of the strange feeling you get from it. Vis seems to flow freely through it. You're sure there's some way to utilize this unique attribute."
 }

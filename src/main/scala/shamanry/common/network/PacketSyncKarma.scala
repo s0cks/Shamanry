@@ -4,12 +4,14 @@ import cpw.mods.fml.common.network.simpleimpl.{MessageContext, IMessageHandler, 
 import cpw.mods.fml.relauncher.{Side, SideOnly}
 import io.netty.buffer.ByteBuf
 import net.minecraft.client.Minecraft
+import net.minecraft.entity.player.EntityPlayer
 import shamanry.common.lib.karma.Karma
 
 class PacketSyncKarma(var good: Double, var bad: Double)
 extends IMessage
 with IMessageHandler[PacketSyncKarma, IMessage]{
   def this() = this(-1D, -1D);
+  def this(player: EntityPlayer) = this(Karma.get(player).getGoodKarma(), Karma.get(player).getBadKarma());
 
   override def fromBytes(buf: ByteBuf): Unit ={
     this.good = buf.readDouble();

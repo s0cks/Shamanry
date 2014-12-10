@@ -10,21 +10,21 @@ import org.lwjgl.opengl.GL11;
  * Created using Tabula 4.0.2
  */
 public final class ModelAltar extends ModelBase {
-    public ModelRenderer altarBase;
-    public ModelRenderer altarTop;
-    public ModelRenderer altarPillar_1;
-    public ModelRenderer altarPillar_2;
-    public ModelRenderer altarPillar_3;
-    public ModelRenderer altarPillar_4;
-    public ModelRenderer tabletBottom;
-    public ModelRenderer tabletRight3;
-    public ModelRenderer tabletRight2;
-    public ModelRenderer tabletRight1;
-    public ModelRenderer tabletCenter;
-    public ModelRenderer tabletLeft1;
-    public ModelRenderer tabletLeft;
-    public ModelRenderer tabletLeft2;
-    public ModelRenderer tabletRight;
+    private ModelRenderer altarBase;
+    private ModelRenderer altarTop;
+    private ModelRenderer altarPillar_1;
+    private ModelRenderer altarPillar_2;
+    private ModelRenderer altarPillar_3;
+    private ModelRenderer altarPillar_4;
+    private ModelRenderer tabletBottom;
+    private ModelRenderer tabletRight3;
+    private ModelRenderer tabletRight2;
+    private ModelRenderer tabletRight1;
+    private ModelRenderer tabletCenter;
+    private ModelRenderer tabletLeft1;
+    private ModelRenderer tabletLeft;
+    private ModelRenderer tabletLeft2;
+    private ModelRenderer tabletRight;
 
     public ModelAltar() {
         this.textureWidth = 64;
@@ -187,6 +187,8 @@ public final class ModelAltar extends ModelBase {
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        this.renderAltar();
+        this.renderTablet();
     }
 
     /**

@@ -70,9 +70,10 @@ public class ShamanryRecipes{
                     .add(Aspect.ORDER, 100)
                     .add(Aspect.ENTROPY, 100),
                 "SWS",
-                "SBS",
+                "GBG",
                 "SSS",
-                'S', Blocks.stone,
+                'S', ThaumcraftItems.blockArcaneStone(),
+                'G', ThaumcraftItems.blockGreatwoodLog(),
                 'B', ThaumcraftItems.itemBalancedShard(),
                 'W', new ItemStack(Items.skull, 1, 1)
         );
@@ -87,7 +88,7 @@ public class ShamanryRecipes{
         );
 
         // Infusion Recipes
-        shamanStaffCoreRecipe = ThaumcraftApi.addInfusionCraftingRecipe("STAFF_SHAMANIC",
+        shamanStaffCoreRecipe = ThaumcraftApi.addInfusionCraftingRecipe("ROD_SHAMANIC_staff",
                 new ItemStack(ShamanryItems.itemShamanicStaffCore()), 1,
                 new AspectList()
                         .add(Aspect.TOOL, 15)

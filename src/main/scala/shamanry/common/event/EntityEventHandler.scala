@@ -5,8 +5,8 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent
 import cpw.mods.fml.common.gameevent.{PlayerEvent => PEvent}
 import cpw.mods.fml.relauncher.Side
 import net.minecraftforge.event.entity.player.PlayerEvent
-import shamanry.common.lib.karma.{Karma, KarmaManager}
-import shamanry.common.network.{PacketSyncKarma, PacketHandler}
+import shamanry.common.lib.karma.KarmaManager
+import shamanry.common.network.{PacketHandler, PacketSyncKarma}
 
 object EntityEventHandler{
   @SubscribeEvent
@@ -22,8 +22,9 @@ object EntityEventHandler{
   @SubscribeEvent
   def onPlayerLogIn(e: PEvent.PlayerLoggedInEvent): Unit ={
     val side: Side = FMLCommonHandler.instance().getEffectiveSide;
+
     if(side == Side.SERVER){
-      PacketHandler.instance.sendToAll(new PacketSyncKarma(Karma.get(e.player).getGoodKarma(), Karma.get(e.player).getBadKarma()));
+      PacketHandler.instance.sendToAll(new PacketSyncKarma(e.player));
     }
   }
 }

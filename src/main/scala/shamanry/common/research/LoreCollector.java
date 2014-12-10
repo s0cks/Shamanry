@@ -1,4 +1,4 @@
-package shamanry.api;
+package shamanry.common.research;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
@@ -15,9 +15,8 @@ public final class LoreCollector{
 
     static
     {
-        InputStream stream = null;
+        InputStream stream = LoreCollector.class.getResourceAsStream("/lore.json");
         try{
-            stream = LoreCollector.class.getResourceAsStream("/lore.json");
             if(stream == null){
                 throw new NullPointerException("Stream == null");
             }

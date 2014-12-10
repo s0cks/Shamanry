@@ -23,9 +23,6 @@ buildscript{
     }
 }
 
-sourceCompatability = JavaVersion.VERSION_1_7
-targetCompatability = JavaVersion.VERSION_1_7
-
 version = config.version
 group = config.group
 archivesBaseName = config.archivesBaseName
