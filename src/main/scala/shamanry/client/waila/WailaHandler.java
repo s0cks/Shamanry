@@ -4,19 +4,16 @@ import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;
 import mcp.mobius.waila.api.IWailaDataProvider;
 import mcp.mobius.waila.api.IWailaRegistrar;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import scala.reflect.internal.Trees.Block;
+import net.minecraft.util.StatCollector;
 import shamanry.common.tile.TileRitualAltar;
 
 import java.util.List;
 
 public final class WailaHandler
 implements IWailaDataProvider{
-    {
-        System.out.println("Hello World");
-    }
-
     @Override
     public ItemStack getWailaStack(IWailaDataAccessor accessor, IWailaConfigHandler config){
         return null;
@@ -34,10 +31,9 @@ implements IWailaDataProvider{
             TileRitualAltar ritualAltar = (TileRitualAltar) tile;
 
             if(ritualAltar.getRitual() != null){
-                currenttip.add("Current Ritual: " + ritualAltar.getRitual().getName());
+                currenttip.add("Current Ritual: " + StatCollector.translateToLocal("ritual." + ritualAltar.getRitual().getName() + ".name"));
             }
         }
-
         return currenttip;
     }
 

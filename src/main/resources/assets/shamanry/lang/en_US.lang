@@ -12,12 +12,26 @@ item.stoneTabletBlank.name=Blank Tablet (Good)
 item.evilTabletBlank.name=Blank Tablet (Evil)
 item.itemCharmOfBlessings.name=Charm of Blessings
 item.itemCharmOfSacrifice.name=Charm of Sacrifice
+item.adobe_brick.name=Adobe Brick
+item.adobe_ball.name=Adobee
+
 tc.research_category.ThaumicFlaminis=Shamanry
+
+ritual.riteCleansing.name=Ritual of Cleansing
+ritual.riteRebirth.name=Ritual of Rebirth
+ritual.riteDivines.name=Ritual of The Divines
+ritual.riteHell.name=Ritual of Hell
+ritual.riteKnowledge.name=Ritual of Knowledge
+ritual.riteDarkness.name=Ritual of Nightfall
+ritual.riteStorm.name=Ritual of The Storm
 
 item.Wand.SHAMANIC.rod=Shaman
 item.Staff.SHAMANIC.rod=Shaman
 
 tile.ritual_altar.name=Ritual Altar
+tile.adobe_brick.name=Adobe Bricks
+tile.adobe_hard.name=Hardened Adobe
+tile.adobe.name=Adobe
 
 # Thaumcraft Research Localization
 tf.name.ROD_SHAMANIC=Shaman Rod

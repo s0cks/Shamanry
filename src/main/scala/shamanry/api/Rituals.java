@@ -2,6 +2,7 @@ package shamanry.api;
 
 import net.minecraft.item.ItemStack;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,6 +22,10 @@ public final class Rituals{
         }
 
         return null;
+    }
+
+    public static Collection<ItemStack> getTablets(){
+        return tablets.values();
     }
 
     public static List<IRitual> getRituals(){

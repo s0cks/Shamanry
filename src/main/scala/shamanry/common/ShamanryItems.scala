@@ -26,6 +26,14 @@ object ShamanryItems{
     .setMaxStackSize(1)
     .setCreativeTab(Shamanry.TAB)
     .setTextureName("shamanry:evil_tablet_raw");
+  val itemAdobeBall = new Item()
+    .setUnlocalizedName("adobe")
+    .setCreativeTab(Shamanry.TAB)
+    .setTextureName("shamanry:adobe_ball");
+  val itemAdobeBrick = new Item()
+    .setUnlocalizedName("adobe_brick")
+    .setCreativeTab(Shamanry.TAB)
+    .setTextureName("shamanry:adobe_brick");
 
   // Misc
   val itemStoneKnife: Item = new Item()
@@ -44,6 +52,8 @@ object ShamanryItems{
 
     // Misc
     GameRegistry.registerItem(itemStoneKnife, "itemStoneKnife");
+    GameRegistry.registerItem(itemAdobeBall, "itemAdobeBall");
+    GameRegistry.registerItem(itemAdobeBrick, "itemAdobeBrick");
 
     // Rite Tablets
     GameRegistry.registerItem(itemGoodTabletBlank, "itemGoodTabletBlank");

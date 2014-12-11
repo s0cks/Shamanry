@@ -26,12 +26,12 @@ object ShamanryResearch{
       .registerResearchItem();
 
     research = new ShamanryResearchItem("TABLET_EVIL", RESEARCH_TAB, new AspectList().add(Aspect.MAGIC, 1).add(Aspect.DARKNESS, 1), 3, 5, 2, new ItemStack(ShamanryItems.itemEvilTabletBlank))
-      .setPages(new ResearchPage(LoreCollector.getLore("tablet_nether")), new ResearchPage(ShamanryRecipes.evilTabletRecipe))
+      .setPages(new ResearchPage(LoreCollector.getLore("tablet_nether")), new ResearchPage(LoreCollector.getLore("tablet_nether_2")), new ResearchPage(ShamanryRecipes.evilTabletRecipe))
       .setSecondary()
       .registerResearchItem();
 
     research = new ShamanryResearchItem("TABLET_GOOD", RESEARCH_TAB, new AspectList().add(Aspect.MAGIC, 1).add(Aspect.LIGHT, 1), 7, 5, 2, new ItemStack(ShamanryItems.itemGoodTabletBlank))
-      .setPages(new ResearchPage(LoreCollector.getLore("tablet_stone")), new ResearchPage(ShamanryRecipes.goodTabletRecipe))
+      .setPages(new ResearchPage(LoreCollector.getLore("tablet_stone")), new ResearchPage(LoreCollector.getLore("tablet_stone_2")), new ResearchPage(ShamanryRecipes.goodTabletRecipe))
       .setSecondary()
       .registerResearchItem();
 
@@ -59,18 +59,18 @@ object ShamanryResearch{
 
     research = new ShamanryResearchItem("RITE_HELL", RESEARCH_TAB, new AspectList().add(Aspect.DARKNESS, 10), 4, 5, 2, Rituals.getTablet("riteHell"))
       .setParents("TABLET_EVIL")
-      .setPages(new ResearchPage(LoreCollector.getLore("rite_Hell")), new ResearchPage(ShamanryRecipes.hellRiteRecipe))
+      .setPages(new ResearchPage(LoreCollector.getLore("rite_hell")), new ResearchPage(ShamanryRecipes.hellRiteRecipe))
       .setSecondary()
       .registerResearchItem();
 
     research = new ShamanryResearchItem("RITE_DARKNESS", RESEARCH_TAB, new AspectList().add(Aspect.DARKNESS, 20), 5, 7, 2, Rituals.getTablet("riteDarkness"))
-      .setPages(new ResearchPage(LoreCollector.getLore("rite_darknes")), new ResearchPage(ShamanryRecipes.darknessRiteRecipe))
+      .setPages(new ResearchPage(LoreCollector.getLore("rite_darkness")), new ResearchPage(ShamanryRecipes.darknessRiteRecipe))
       .setParents("TABLET_EVIL")
       .setSecondary()
       .registerResearchItem();
 
     research = new ShamanryResearchItem("RITE_STORM", RESEARCH_TAB, new AspectList().add(Aspect.MAGIC, 15).add(Aspect.WEATHER, 15), 3, 7, 2, Rituals.getTablet("riteStorm"))
-      .setPages(new ResearchPage(LoreCollector.getLore("rite_storm")), new ResearchPage(ShamanryRecipes.stormRiteRecipe))
+      .setPages(new ResearchPage(LoreCollector.getLore("rite_storm")), new ResearchPage(LoreCollector.getLore("rite_storm_2")), new ResearchPage(ShamanryRecipes.stormRiteRecipe))
       .setParents("TABLET_EVIL")
       .setSecondary()
       .registerResearchItem();
