@@ -4,7 +4,7 @@ import java.util.Random
 
 import net.minecraft.world.World
 
-object SoundHelper{
+object SoundUtils{
   private val rand = new Random();
 
   def playThunderEffect(world: World, x: Int, y: Int, z: Int): Unit ={

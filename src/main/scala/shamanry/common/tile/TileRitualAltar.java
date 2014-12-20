@@ -94,28 +94,30 @@ implements IEssentiaTransport{
 
     @Override
     public void updateEntity(){
-        if(this.ritual != null){
-            this.rot += 2.0F;
+       if(!this.worldObj.isRemote){
+           if(this.ritual != null){
+               this.rot += 2.0F;
 
-            if(this.rot > 360.0F){
-                this.rot = 0.0F;
-            }
-        } else{
-            this.rot = 0.0F;
-        }
+               if(this.rot > 360.0F){
+                   this.rot = 0.0F;
+               }
+           } else{
+               this.rot = 0.0F;
+           }
 
-        if(this.currentEssentia < ESSENTIA_CAPACITY){
-            this.fill();
-        }
+           if(this.currentEssentia < ESSENTIA_CAPACITY){
+               this.fill();
+           }
 
-        if(this.active && this.currentEssentia == ESSENTIA_CAPACITY){
-            if(this.player != null && this.ritual != null){
-                this.ritual.perform(this.worldObj, this.xCoord, this.yCoord, this.zCoord, this.player);
-                this.currentEssentia = 0;
-                this.active = false;
-                this.player = null;
-            }
-        }
+           if(this.active && this.currentEssentia == ESSENTIA_CAPACITY){
+               if(this.player != null && this.ritual != null){
+                   this.ritual.perform(this.worldObj, this.xCoord, this.yCoord, this.zCoord, this.player);
+                   this.currentEssentia = 0;
+                   this.active = false;
+                   this.player = null;
+               }
+           }
+       }
     }
 
     private void fill(){

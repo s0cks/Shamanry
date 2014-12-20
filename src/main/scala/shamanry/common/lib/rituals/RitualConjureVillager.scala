@@ -5,7 +5,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.world.World
 import shamanry.api.{IRitual, RitualType}
 import shamanry.common.lib.karma.Karma
-import shamanry.common.util.SoundHelper
+import shamanry.common.util.SoundUtils
 import thaumcraft.api.aspects.Aspect
 
 object RitualConjureVillager
@@ -27,7 +27,7 @@ extends IRitual{
       world.spawnEntityInWorld(new EntityVillager(world));
     }
 
-    SoundHelper.playThunderEffect(world, x, y, z);
+    SoundUtils.playThunderEffect(world, x, y, z);
   }
 
   override def hasRequiredKarma(player: EntityPlayer): Boolean ={

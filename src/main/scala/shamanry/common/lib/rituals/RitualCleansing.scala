@@ -5,7 +5,7 @@ import net.minecraft.potion.Potion
 import net.minecraft.world.World
 import shamanry.api.{RitualType, IRitual}
 import shamanry.common.lib.karma.Karma
-import shamanry.common.util.SoundHelper
+import shamanry.common.util.SoundUtils
 import thaumcraft.api.aspects.Aspect
 
 object RitualCleansing
@@ -28,7 +28,7 @@ extends IRitual{
         player.removePotionEffect(p.getId());
       }
     }
-    SoundHelper.playThunderEffect(world, x, y, z);
+    SoundUtils.playThunderEffect(world, x, y, z);
   }
 
   override def hasRequiredKarma(player: EntityPlayer): Boolean ={
